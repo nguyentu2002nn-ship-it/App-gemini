@@ -16,10 +16,7 @@ st.markdown("""
 API_KEY = "AIzaSyAGUG8S8AHmtfd89O2Ghs4xTupNI8Gpyqc"
 SYSTEM_INSTRUCTION = "gemini-1.5-flash"
 
-if API_KEY == "gemini-1.5-flash":
-    st.error("⚠️ Bạn chưa điền API Key vào code!")
-else:
-    genai.configure(api_key=API_KEY)
+genai.configure(api_key=API_KEY)
     
     # Cấu hình Model
     model = genai.GenerativeModel(
@@ -57,3 +54,4 @@ else:
                     st.session_state.messages.append({"role": "assistant", "content": ai_text})
                 except Exception as e:
                     st.error(f"Lỗi API: {e}")
+
