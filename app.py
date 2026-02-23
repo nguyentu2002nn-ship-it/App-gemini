@@ -5,7 +5,7 @@ from google import genai
 st.set_page_config(page_title="My AI App", layout="centered")
 
 # 2. Nhập API Key (Hãy đảm bảo Key nằm trong dấu ngoặc kép)
-API_KEY = "AIzaSyAGUG8S8AHmtfd89O2Ghs4xTupNI8Gpyqc"
+API_KEY = "AIzaSyC0X_zaicRUrboJjDqCoPTx8O72JPHJ3Yo"
 
 # Khởi tạo Client theo chuẩn mới 2026
 client = genai.Client(api_key=API_KEY)
@@ -39,4 +39,5 @@ if prompt := st.chat_input("Hỏi tôi điều gì đó..."):
             st.session_state.messages.append({"role": "assistant", "content": response.text})
         except Exception as e:
             st.error(f"Đã xảy ra lỗi: {e}")
+
 
