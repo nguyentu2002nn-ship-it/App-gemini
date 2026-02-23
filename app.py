@@ -10,8 +10,8 @@ genai.configure(api_key=API_KEY)
 
 # 3. Thiết lập Model & System Instruction
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
-    system_instruction="Bạn là một trợ lý thông minh." # Thay đổi nội dung này theo ý bạn
+model_name="gemini-1.5-flash",
+system_instruction="Bạn là một trợ lý thông minh." # Thay đổi nội dung này theo ý bạn
 )
 
 # 4. Giao diện Chat
@@ -33,3 +33,4 @@ if prompt := st.chat_input("Hỏi tôi điều gì đó..."):
         response = model.generate_content(prompt)
         st.markdown(response.text)
         st.session_state.messages.append({"role": "assistant", "content": response.text})
+
